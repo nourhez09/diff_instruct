@@ -1,0 +1,2 @@
+{"results": {"is50k_mean": 2.5681822299957275, "is50k_std": 0.019713561981916428}, "metric": "is50k", "total_time": 800.467536687851, "total_time_str": "13m 20s", "num_gpus": 1, "snapshot_pkl": "..\\..\\..\\..\\fakes000000.png", "timestamp": 1737130342.2719123}
+{"results": {"is50k_mean": 1.6963679790496826, "is50k_std": 0.009239673614501953}, "metric": "is50k", "total_time": 705.0459837913513, "total_time_str": "11m 45s", "num_gpus": 1, "snapshot_pkl": "..\\..\\..\\..\\fakes001024.png", "timestamp": 1737138370.0562825}

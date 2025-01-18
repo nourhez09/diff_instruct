@@ -1,0 +1,91 @@
+Loading dataset...
+C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\utils\data\sampler.py:65: UserWarning: `data_source` argument is not used and will be removed in 2.2.0.You may still have custom implementation that utilizes it.
+  warnings.warn("`data_source` argument is not used and will be removed in 2.2.0."
+Constructing network...
+
+EDMPrecond              Parameters  Buffers  Output shape       Datatype
+---                     ---         ---      ---                ---     
+model.map_noise         -           -        [16, 192]          float32 
+model.map_layer0        148224      -        [16, 768]          float32 
+model.map_layer1        590592      -        [16, 768]          float32 
+model.enc.64x64_conv    5376        -        [16, 192, 64, 64]  float32 
+model.enc.64x64_block0  960000      -        [16, 192, 64, 64]  float32 
+model.enc.64x64_block1  960000      -        [16, 192, 64, 64]  float32 
+model.enc.64x64_block2  960000      -        [16, 192, 64, 64]  float32 
+model.enc.32x32_down    960000      8        [16, 192, 32, 32]  float32 
+model.enc.32x32_block0  3249408     -        [16, 384, 32, 32]  float32 
+model.enc.32x32_block1  3839232     -        [16, 384, 32, 32]  float32 
+model.enc.32x32_block2  3839232     -        [16, 384, 32, 32]  float32 
+model.enc.16x16_down    3247104     8        [16, 384, 16, 16]  float32 
+model.enc.16x16_block0  7417920     -        [16, 576, 16, 16]  float32 
+model.enc.16x16_block1  8191872     -        [16, 576, 16, 16]  float32 
+model.enc.16x16_block2  8191872     -        [16, 576, 16, 16]  float32 
+model.enc.8x8_down      6861312     8        [16, 576, 8, 8]    float32 
+model.enc.8x8_block0    13282176    -        [16, 768, 8, 8]    float32 
+model.enc.8x8_block1    14166528    -        [16, 768, 8, 8]    float32 
+model.enc.8x8_block2    14166528    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_in0       14166528    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_in1       11802624    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block0    20656896    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block1    20656896    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block2    20656896    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block3    19181952    -        [16, 768, 8, 8]    float32 
+model.dec.16x16_up      11802624    8        [16, 768, 16, 16]  float32 
+model.dec.16x16_block0  12949440    -        [16, 576, 16, 16]  float32 
+model.dec.16x16_block1  11843136    -        [16, 576, 16, 16]  float32 
+model.dec.16x16_block2  11843136    -        [16, 576, 16, 16]  float32 
+model.dec.16x16_block3  10736832    -        [16, 576, 16, 16]  float32 
+model.dec.32x32_up      6861312     8        [16, 576, 32, 32]  float32 
+model.dec.32x32_block0  6200064     -        [16, 384, 32, 32]  float32 
+model.dec.32x32_block1  5462400     -        [16, 384, 32, 32]  float32 
+model.dec.32x32_block2  5462400     -        [16, 384, 32, 32]  float32 
+model.dec.32x32_block3  4724736     -        [16, 384, 32, 32]  float32 
+model.dec.64x64_up      3247104     8        [16, 384, 64, 64]  float32 
+model.dec.64x64_block0  1735104     -        [16, 192, 64, 64]  float32 
+model.dec.64x64_block1  1366080     -        [16, 192, 64, 64]  float32 
+model.dec.64x64_block2  1366080     -        [16, 192, 64, 64]  float32 
+model.dec.64x64_block3  1366080     -        [16, 192, 64, 64]  float32 
+model.out_norm          384         -        [16, 192, 64, 64]  float32 
+model.out_conv          5187        -        [16, 3, 64, 64]    float32 
+model                   1728        -        [16, 3, 64, 64]    float32 
+<top-level>             -           -        [16, 3, 64, 64]    float32 
+---                     ---         ---      ---                ---     
+Total                   295132995   48       -                  -       
+
+Setting up optimizer...
+Loading network weights from "https://nvlabs-fi-cdn.nvidia.com/edm/pretrained/edm-imagenet-64x64-cond-adm.pkl"...
+Exporting sample images...
+Training for 200000 kimg...
+0 200000
+tick 0     kimg 0.0       time 1m 19s       sec/tick 29.6    sec/kimg 1848.21 maintenance 49.0   cpumem 6.34   gpumem 12.38  reserved 12.54 
+Exporting sample images...
+Evaluating metrics...
+
+Aborted!
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x000001DA6E1E7EE0>
+Traceback (most recent call last):
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\utils\data\dataloader.py", line 1477, in __del__
+    self._shutdown_workers()
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\utils\data\dataloader.py", line 1422, in _shutdown_workers
+    self._worker_result_queue.put((None, None))
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\multiprocessing\queues.py", line 88, in put
+    self._start_thread()
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\multiprocessing\queues.py", line 163, in _start_thread
+    self._thread = threading.Thread(
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\threading.py", line 799, in __init__
+    self._started = Event()
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\threading.py", line 506, in __init__
+    self._cond = Condition(Lock())
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\threading.py", line 222, in __init__
+    def __init__(self, lock=None):
+KeyboardInterrupt: 
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\multiprocessing\util.py", line 213, in __call__
+    try:
+KeyboardInterrupt: 
+Exception ignored in: <object repr() failed>
+Traceback (most recent call last):
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\threading.py", line 1355, in _shutdown
+    def _shutdown():
+KeyboardInterrupt: 

@@ -1,0 +1,4 @@
+{"results": {"is50k_mean": 1.1966822147369385, "is50k_std": 0.0015487445052713156}, "metric": "is50k", "total_time": 844.6790328025818, "total_time_str": "14m 05s", "num_gpus": 1, "snapshot_pkl": "..\\..\\..\\..\\fakes000000.png", "timestamp": 1735634905.6204233}
+{"results": {"is50k_mean": 1.0, "is50k_std": 0.0}, "metric": "is50k", "total_time": 490.9969336986542, "total_time_str": "8m 11s", "num_gpus": 1, "snapshot_pkl": "..\\..\\..\\..\\fakes001024.png", "timestamp": 1735642617.42801}
+{"results": {"is50k_mean": 1.0, "is50k_std": 0.0}, "metric": "is50k", "total_time": 493.9206380844116, "total_time_str": "8m 14s", "num_gpus": 1, "snapshot_pkl": "..\\..\\..\\..\\fakes002048.png", "timestamp": 1735648216.4469934}
+{"results": {"is50k_mean": 1.0, "is50k_std": 0.0}, "metric": "is50k", "total_time": 493.89532446861267, "total_time_str": "8m 14s", "num_gpus": 1, "snapshot_pkl": "..\\..\\..\\..\\fakes003072.png", "timestamp": 1735654103.3582683}

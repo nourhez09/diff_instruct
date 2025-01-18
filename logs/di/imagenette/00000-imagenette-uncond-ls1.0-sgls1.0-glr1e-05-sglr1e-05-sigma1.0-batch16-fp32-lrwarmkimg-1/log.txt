@@ -1,0 +1,109 @@
+Loading dataset...
+C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\utils\data\sampler.py:65: UserWarning: `data_source` argument is not used and will be removed in 2.2.0.You may still have custom implementation that utilizes it.
+  warnings.warn("`data_source` argument is not used and will be removed in 2.2.0."
+Constructing network...
+
+EDMPrecond              Parameters  Buffers  Output shape       Datatype
+---                     ---         ---      ---                ---     
+model.map_noise         -           -        [16, 192]          float32 
+model.map_layer0        148224      -        [16, 768]          float32 
+model.map_layer1        590592      -        [16, 768]          float32 
+model.enc.64x64_conv    5376        -        [16, 192, 64, 64]  float32 
+model.enc.64x64_block0  960000      -        [16, 192, 64, 64]  float32 
+model.enc.64x64_block1  960000      -        [16, 192, 64, 64]  float32 
+model.enc.64x64_block2  960000      -        [16, 192, 64, 64]  float32 
+model.enc.32x32_down    960000      8        [16, 192, 32, 32]  float32 
+model.enc.32x32_block0  3249408     -        [16, 384, 32, 32]  float32 
+model.enc.32x32_block1  3839232     -        [16, 384, 32, 32]  float32 
+model.enc.32x32_block2  3839232     -        [16, 384, 32, 32]  float32 
+model.enc.16x16_down    3247104     8        [16, 384, 16, 16]  float32 
+model.enc.16x16_block0  7417920     -        [16, 576, 16, 16]  float32 
+model.enc.16x16_block1  8191872     -        [16, 576, 16, 16]  float32 
+model.enc.16x16_block2  8191872     -        [16, 576, 16, 16]  float32 
+model.enc.8x8_down      6861312     8        [16, 576, 8, 8]    float32 
+model.enc.8x8_block0    13282176    -        [16, 768, 8, 8]    float32 
+model.enc.8x8_block1    14166528    -        [16, 768, 8, 8]    float32 
+model.enc.8x8_block2    14166528    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_in0       14166528    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_in1       11802624    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block0    20656896    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block1    20656896    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block2    20656896    -        [16, 768, 8, 8]    float32 
+model.dec.8x8_block3    19181952    -        [16, 768, 8, 8]    float32 
+model.dec.16x16_up      11802624    8        [16, 768, 16, 16]  float32 
+model.dec.16x16_block0  12949440    -        [16, 576, 16, 16]  float32 
+model.dec.16x16_block1  11843136    -        [16, 576, 16, 16]  float32 
+model.dec.16x16_block2  11843136    -        [16, 576, 16, 16]  float32 
+model.dec.16x16_block3  10736832    -        [16, 576, 16, 16]  float32 
+model.dec.32x32_up      6861312     8        [16, 576, 32, 32]  float32 
+model.dec.32x32_block0  6200064     -        [16, 384, 32, 32]  float32 
+model.dec.32x32_block1  5462400     -        [16, 384, 32, 32]  float32 
+model.dec.32x32_block2  5462400     -        [16, 384, 32, 32]  float32 
+model.dec.32x32_block3  4724736     -        [16, 384, 32, 32]  float32 
+model.dec.64x64_up      3247104     8        [16, 384, 64, 64]  float32 
+model.dec.64x64_block0  1735104     -        [16, 192, 64, 64]  float32 
+model.dec.64x64_block1  1366080     -        [16, 192, 64, 64]  float32 
+model.dec.64x64_block2  1366080     -        [16, 192, 64, 64]  float32 
+model.dec.64x64_block3  1366080     -        [16, 192, 64, 64]  float32 
+model.out_norm          384         -        [16, 192, 64, 64]  float32 
+model.out_conv          5187        -        [16, 3, 64, 64]    float32 
+model                   1728        -        [16, 3, 64, 64]    float32 
+<top-level>             -           -        [16, 3, 64, 64]    float32 
+---                     ---         ---      ---                ---     
+Total                   295132995   48       -                  -       
+
+Setting up optimizer...
+Loading network weights from "https://nvlabs-fi-cdn.nvidia.com/edm/pretrained/edm-imagenet-64x64-cond-adm.pkl"...
+Exporting sample images...
+Training for 200000 kimg...
+0 200000
+tick 0     kimg 0.0       time 1m 43s       sec/tick 39.9    sec/kimg 2492.05 maintenance 63.5   cpumem 0.50   gpumem 12.39  reserved 12.55 
+Exporting sample images...
+Traceback (most recent call last):
+  File "diff_instruct-main\diff_instruct-main\di_train2.py", line 261, in <module>
+    main()
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "diff_instruct-main\diff_instruct-main\di_train2.py", line 257, in main
+    training_loop.training_loop(**c)
+  File "C:\Users\nourh\Documents\Projets\generative_modeling\diff_instruct-main\diff_instruct-main\training\di_training_loop2.py", line 352, in training_loop
+    images = torch.cat([
+  File "C:\Users\nourh\Documents\Projets\generative_modeling\diff_instruct-main\diff_instruct-main\training\di_training_loop2.py", line 353, in <listcomp>
+    Gema(z, init_sigma * torch.ones(z.shape[0], 1, 1, 1).to(z.device).to(z.dtype), c, augment_labels=torch.zeros(z.shape[0], 9).to(z.device).to(z.dtype)).cpu()
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\nourh\Documents\Projets\generative_modeling\diff_instruct-main\diff_instruct-main\training\networks.py", line 665, in forward
+    F_x = self.model((c_in * x).to(dtype), c_noise.flatten(), class_labels=class_labels, **model_kwargs)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\nourh\Documents\Projets\generative_modeling\diff_instruct-main\diff_instruct-main\training\networks.py", line 452, in forward
+    x = block(x, emb) if isinstance(block, UNetBlock) else block(x)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\nourh\Documents\Projets\generative_modeling\diff_instruct-main\diff_instruct-main\training\networks.py", line 182, in forward
+    q, k, v = self.qkv(self.norm2(x)).reshape(x.shape[0] * self.num_heads, x.shape[1] // self.num_heads, 3, -1).unbind(2)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\nourh\Documents\Projets\generative_modeling\diff_instruct-main\diff_instruct-main\training\networks.py", line 105, in forward
+    x = torch.nn.functional.group_norm(x, num_groups=self.num_groups, weight=self.weight.to(x.dtype), bias=self.bias.to(x.dtype), eps=self.eps)
+  File "C:\Users\nourh\miniconda3\envs\di_v100\lib\site-packages\torch\nn\functional.py", line 2606, in group_norm
+    return torch.group_norm(input, num_groups, weight, bias, eps, torch.backends.cudnn.enabled)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

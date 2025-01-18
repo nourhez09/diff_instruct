@@ -1,0 +1,1 @@
+this ewperiment was with the change of gpu for calculus of fid score that at the end did not work 

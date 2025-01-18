@@ -1,0 +1,90 @@
+{
+  "dataset_kwargs": {
+    "class_name": "training.dataset.ImageFolderDataset",
+    "path": "data\\datasets\\cifar10-32x32.zip",
+    "use_labels": false,
+    "xflip": false,
+    "cache": true,
+    "resolution": 32,
+    "max_size": 50000
+  },
+  "data_loader_kwargs": {
+    "pin_memory": true,
+    "num_workers": 1,
+    "prefetch_factor": 2
+  },
+  "network_kwargs": {
+    "model_type": "SongUNet",
+    "embedding_type": "positional",
+    "encoder_type": "standard",
+    "decoder_type": "standard",
+    "channel_mult_noise": 1,
+    "resample_filter": [
+      1,
+      1
+    ],
+    "model_channels": 128,
+    "channel_mult": [
+      2,
+      2,
+      2
+    ],
+    "class_name": "training.networks.EDMPrecond",
+    "augment_dim": 9,
+    "dropout": 0.13,
+    "use_fp16": false
+  },
+  "loss_kwargs": {
+    "class_name": "training.di_loss.DI_EDMLoss"
+  },
+  "sg_optimizer_kwargs": {
+    "class_name": "torch.optim.Adam",
+    "lr": 1.5e-06,
+    "betas": [
+      0.0,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "g_optimizer_kwargs": {
+    "class_name": "torch.optim.Adam",
+    "lr": 1.5e-06,
+    "betas": [
+      0.0,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "init_sigma": 1.0,
+  "ema_mu": -1.0,
+  "use_fp16": false,
+  "lr_rampup_kimg": -1,
+  "total_kimg": 200000,
+  "ema_halflife_kimg": 500,
+  "batch_size": 64,
+  "batch_gpu": null,
+  "loss_scaling": 1.0,
+  "sgls": 1.0,
+  "cudnn_benchmark": true,
+  "kimg_per_tick": 1,
+  "snapshot_ticks": 1000,
+  "seed": 687819403,
+  "metrics": [
+    "fid50k_full",
+    "is50k"
+  ],
+  "augment_kwargs": {
+    "class_name": "training.augment.AugmentPipe",
+    "p": 0.12,
+    "xflip": 100000000.0,
+    "yflip": 1,
+    "scale": 1,
+    "rotate_frac": 1,
+    "aniso": 1,
+    "translate_frac": 1
+  },
+  "resume_pkl": "https://nvlabs-fi-cdn.nvidia.com/edm/pretrained/edm-cifar10-32x32-uncond-vp.pkl",
+  "transfer_pkl": "https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/cifar10.pkl",
+  "ema_rampup_ratio": null,
+  "run_dir": "logs\\di\\transfer\\ci10-uncond-\\00002-cifar10-32x32-uncond-ls1.0-sgls1.0-glr1.5e-06-sglr1.5e-06-sigma1.0-batch64-fp32-lrwarmkimg-1"
+}

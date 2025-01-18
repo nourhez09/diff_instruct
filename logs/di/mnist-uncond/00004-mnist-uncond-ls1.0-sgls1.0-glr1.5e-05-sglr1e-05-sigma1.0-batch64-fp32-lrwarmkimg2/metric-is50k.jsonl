@@ -1,0 +1,1 @@
+{"results": {"is50k_mean": 1.2030811309814453, "is50k_std": 0.0034058387391269207}, "metric": "is50k", "total_time": 814.7816550731659, "total_time_str": "13m 35s", "num_gpus": 1, "snapshot_pkl": "..\\..\\..\\..\\fakes000000.png", "timestamp": 1737120899.3654985}
