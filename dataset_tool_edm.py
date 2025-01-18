@@ -180,14 +180,20 @@ def open_mnist(images_gz: str, *, max_images: Optional[int]):
         images = np.frombuffer(f.read(), np.uint8, offset=16)
     with gzip.open(labels_gz, 'rb') as f:
         labels = np.frombuffer(f.read(), np.uint8, offset=8)
-
     images = images.reshape(-1, 28, 28)
     images = np.pad(images, [(0,0), (2,2), (2,2)], 'constant', constant_values=0)
-    assert images.shape == (60000, 32, 32) and images.dtype == np.uint8
+    # assert images.shape == (60000, 32, 32) and images.dtype == np.uint8
+    # assert labels.shape == (60000,) and labels.dtype == np.uint8
+    # assert np.min(images) == 0 and np.max(images) == 255
+    # assert np.min(labels) == 0 and np.max(labels) == 9
+
+    # Répéter le canal pour obtenir une image en 3 canaux
+    images = np.repeat(images[:, np.newaxis, :, :], 3, axis=1)  # Ajouter la dimension des canaux
+    images = images.transpose([0, 2, 3, 1]) # NCHW -> NHWC
+    assert images.shape == (60000,32, 32, 3) and images.dtype == np.uint8
     assert labels.shape == (60000,) and labels.dtype == np.uint8
     assert np.min(images) == 0 and np.max(images) == 255
     assert np.min(labels) == 0 and np.max(labels) == 9
-
     max_idx = maybe_min(len(images), max_images)
 
     def iterate_images():
